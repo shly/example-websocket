@@ -10,7 +10,6 @@ app.use(express.static('public'));
 app.get('/',function(req,res){
 	res.sendFile(__dirname + '/index.html');
 });
-
 io.on('connection',function(socket){
 	socket.on('disconnect',function(){
 		 io.emit('disconnect', 'a user disconnected');
